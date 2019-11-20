@@ -4,5 +4,5 @@ from bookworm import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("register/", views.register, name="register"),  # <-- added
+    path('', include("bookworm.urls"))
 ]

@@ -1,20 +1,27 @@
-# views.py
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from .forms import BookwormAccountForm
+from django_tables2 import SingleTableView
+from django.views.generic import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from .models import Book
+from .tables import BookTable
+from .forms import BookForm
 
-def index(request):
-    return HttpResponse("Up and running!")
+class BookView(SingleTableView):
+    model = Book
+    table_class = BookTable
+    template_name_suffix = '_list'
 
-# Create your views here.
-def register(response):
-    if response.method == "POST":
-        form = BookwormAccountForm(response.POST)
-        if form.is_valid():
-            form.save()
+class BookCreateView(CreateView):
+    model = Book
+    form_class = BookForm
+    template_name_suffix = '_create_form'
 
-        return redirect("/home")
-    else:
-        form = BookwormAccountForm()
+class BookUpdateView(UpdateView):
+    model = Book
+    form_class = BookForm
+    template_name_suffix = '_update_form'
 
-    return render(response, "bookworm/register.html", {"form": form})
+class BookDeleteView(DeleteView):
+    model = Book
+    form_class = BookForm
+    template_name_suffix = '_delete_form'
+    success_url = reverse_lazy('books')
