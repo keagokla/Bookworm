@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_starfield',
     'bootstrap_datepicker_plus',
     'django_icons',
     'crispy_forms',
