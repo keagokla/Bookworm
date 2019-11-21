@@ -31,9 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'bootstrap_datepicker_plus',
+    'django_icons',
     'crispy_forms',
     'django_tables2',
-    'bootstrap4',
     'bookworm.apps.BookwormConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -123,5 +124,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap.html"
+DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
 CRISPY_TEMPLATE_PACK = "bootstrap3"

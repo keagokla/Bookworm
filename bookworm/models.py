@@ -8,8 +8,8 @@ class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
     pub_date = models.DateField('Publication date')
-    summary = models.CharField(max_length=200)
-
+    summary = models.CharField(max_length=200, blank=True)
+    
     def get_absolute_url(self):
         return reverse('books')
 

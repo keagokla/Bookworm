@@ -5,20 +5,24 @@ from .models import Book
 from .tables import BookTable
 from .forms import BookForm
 
+
 class BookView(SingleTableView):
     model = Book
     table_class = BookTable
     template_name_suffix = '_list'
+
 
 class BookCreateView(CreateView):
     model = Book
     form_class = BookForm
     template_name_suffix = '_create_form'
 
+
 class BookUpdateView(UpdateView):
     model = Book
     form_class = BookForm
     template_name_suffix = '_update_form'
+
 
 class BookDeleteView(DeleteView):
     model = Book

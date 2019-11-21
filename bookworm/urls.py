@@ -3,7 +3,6 @@ from django.views.generic import RedirectView
 from .views import BookView, BookCreateView, BookUpdateView, BookDeleteView
 
 urlpatterns = [
-    # ex: /app_config/
     path("", RedirectView.as_view(pattern_name='books', permanent=True)),
 
     path('books/', BookView.as_view(), name='books'),

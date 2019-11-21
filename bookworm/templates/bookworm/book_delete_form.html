@@ -4,7 +4,8 @@
 {% block content %}
   <form method="post">
     {% csrf_token %}
-    <p>Are you sure you want to delete "{{ object }}"?</p>
-    <button type="submit" class="btn btn-primary">Delete</button>
+    <p>Are you sure you want to delete the book named "{{ object }}"?</p>
+    <input class="btn btn-primary" type="submit" value="Delete" />
+    <a href="{% url 'books' %}" class="btn btn-secondary">Cancel</a>
   </form>
 {% endblock %}
