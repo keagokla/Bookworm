@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django_tables2',
     'bookworm.apps.BookwormConfig',
+    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -126,3 +127,6 @@ STATIC_URL = '/static/'
 
 DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
 CRISPY_TEMPLATE_PACK = "bootstrap3"
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"

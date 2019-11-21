@@ -24,12 +24,13 @@
             display: block;
         }
 
-        .sidenav a:hover {
+        .sidenav  a:hover {
             color: #f1f1f1;
         }
 
         .main {
-            margin-left: 100px;
+            margin-left: 25px;
+            margin-right: 25px;
             padding: 0px 10px;
         }
     </style>
@@ -58,7 +59,10 @@
 
 <body>
     <div class="sidenav">
-        <a href="/books">Library</a>
+        <a href="{% url 'books' %}" onclick="this.style.color='red'">Library</a>
+        <a href="{% url 'reviews' %}">Reviews</a>
+        {% load icons %}
+        <a style="position: absolute; bottom: 50px;" href="{% url 'logout' %}">{% icon 'sign-out-alt' 'fa-lg' title='Sign out' %}</a>
     </div>
 
     <div id="content" name="content" class="main">

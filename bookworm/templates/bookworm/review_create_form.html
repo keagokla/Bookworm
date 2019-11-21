@@ -10,7 +10,7 @@
   {% csrf_token %}
   {{ form|crispy }}
   <input class="btn btn-primary" type="submit" value="Save" />
-  <input class="btn btn-primary" type="submit" name="add_another_book" value="Save and add another" />
-  <a href="{% url 'books' %}" class="btn btn-secondary">Cancel</a>
+  <input class="btn btn-primary" type="submit" name="add_another_review" value="Save and add another" />
+  <a href="{% url 'reviews' %}" class="btn btn-secondary">Cancel</a>
 </form>
 {% endblock %}

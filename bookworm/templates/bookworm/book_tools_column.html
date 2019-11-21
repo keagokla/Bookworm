@@ -1,0 +1,3 @@
+{% load icons %}
+<a style="outline: none;" href="{% url 'edit_book' record.id %}">{% icon 'edit' title='Edit' %}</a>
+<a style="outline: none;" href="{% url 'delete_book' record.id %}">{% icon 'trash' title='Delete' %}</a>

@@ -1,0 +1,15 @@
+{% extends "bookworm/base.html" %}
+
+{% block title %}
+Sign up
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form method="POST" class="form-group">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input class="btn btn-primary" type="submit" value="Sign up" />
+</form>
+{% endblock %}

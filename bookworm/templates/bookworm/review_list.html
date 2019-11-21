@@ -1,0 +1,10 @@
+{% extends './base.html' %}
+{% load django_tables2 %}
+
+{% block content %}
+<h2>Reviews</h2>
+{% render_table table %}
+<form action='add' method='GET'>
+    <button type='submit' class="btn btn-primary">Add a review</button>
+</form>
+{% endblock content %}

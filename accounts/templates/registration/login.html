@@ -1,0 +1,16 @@
+{% extends "bookworm/base.html" %}
+
+{% block title %}
+Sign in
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form method="post" class="from-group">
+    {% csrf_token %}
+    {{form|crispy}}
+    <p>Don't have an account yet? Click <a href="{% url 'sign_up' %}">here</a> to create your account</p>
+    <input class="btn btn-primary" type="submit" value="Sign in" />
+</form>
+{% endblock %}
